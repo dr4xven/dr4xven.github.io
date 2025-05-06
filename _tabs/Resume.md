@@ -8,7 +8,7 @@ fas fa-info-circle -->
 	
 Amon Mwagala
 
-    连环杀手
+  连环杀手
 
 I'm syk4x, a passionate Red Team enthusiast specializing in offensive security. My core interests include penetration testing, bug hunting, and Capture The Flag (CTF) challenges.
 
@@ -19,11 +19,11 @@ Experience
 
 Certifications
 
-    CWL Certified Red Team Analyst - CRTA {: .prompt-tip }
+    CWL Certified Red Team Analyst - CRTA 
 
-    CWL Certified Cyber Security Analyst - C3SA {: .prompt-tip }
+    CWL Certified Cyber Security Analyst - C3SA 
 
-    SSECOP GROUPS Certified Network Security Practitioner - CNSP {: .prompt-tip }
+    SSECOP GROUPS Certified Network Security Practitioner - CNSP 
 
 
     Linkedin: Amon Mwagala

@@ -37,7 +37,6 @@ GEM
     ethon (0.16.0)
       ffi (>= 1.15.0)
     eventmachine (1.2.7)
-    ffi (1.17.2)
     ffi (1.17.2-aarch64-linux-gnu)
     ffi (1.17.2-aarch64-linux-musl)
     ffi (1.17.2-arm-linux-gnu)
@@ -123,10 +122,6 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
     metrics (0.12.2)
-    mini_portile2 (2.8.8)
-    nokogiri (1.18.8)
-      mini_portile2 (~> 2.8.2)
-      racc (~> 1.4)
     nokogiri (1.18.8-aarch64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.18.8-aarch64-linux-musl)
@@ -162,9 +157,6 @@ GEM
     rouge (4.5.2)
     ruby-rc4 (0.1.5)
     safe_yaml (1.0.5)
-    sass-embedded (1.87.0)
-      google-protobuf (~> 4.30)
-      rake (>= 13)
     sass-embedded (1.87.0-aarch64-linux-gnu)
       google-protobuf (~> 4.30)
     sass-embedded (1.87.0-aarch64-linux-musl)
@@ -202,9 +194,8 @@ PLATFORMS
   arm-linux-musl
   arm-linux-musleabihf
   arm64-darwin
-  ruby
   x86_64-darwin
-  x86_64-linux
+  x86_64-linux-gnu
   x86_64-linux-musl
 
 DEPENDENCIES
@@ -216,4 +207,4 @@ DEPENDENCIES
   zeitwerk (< 2.7.2)
 
 BUNDLED WITH
-   2.6.7
+   2.6.8
