@@ -364,3 +364,8 @@ To defend against the techniques used in this engagement, we recommend the follo
     Patch and Harden Domain Controllers: Regularly apply security updates and disable legacy protocols such as NTLM if not required.
 
     Perform Regular Security Audits: Continuously assess AD configurations, user permissions, and exposure to common attacks.
+
+
+Till next time
+
+#OperationFireball #KillTheLimits #Sniper #SerialKiller #RedTeam #Pentesting #ActiveDirectory
