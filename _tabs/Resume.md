@@ -10,7 +10,7 @@ Amon Mwagala
 
   连环杀手
 
-I'm syk4x, a passionate Red Team enthusiast specializing in offensive security. My core interests include penetration testing, bug hunting, and Capture The Flag (CTF) challenges.
+I'm Dr4xven, a passionate Red Team enthusiast specializing in offensive security. My core interests include penetration testing, bug hunting, and Capture The Flag (CTF) challenges.
 
 Experience
 
