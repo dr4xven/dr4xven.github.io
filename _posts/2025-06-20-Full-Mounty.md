@@ -1,8 +1,8 @@
 ---
 icon: fas fa-info-circle
 order: 4
-categories: HackTheBox
-tags: ACL PSAFE3 DNCSync FTP Spraying Keberoasting GenericWrite GerenericAll backup.psafe3 WinRM
+categories: PwnTillDawn
+tags: NFS SSH RDS
 image: https://online.pwntilldawn.com/Content/img/machines/3.png
 ---
 

@@ -153,3 +153,5 @@ Unfortunately, the scan didn’t return any valid usernames:
 ```
 
 Given the lack of results from wpscan, I turned to Hydra for brute-forcing the login page. Before launching the attack, I analyzed the HTTP response to capture the exact error message presented on failed login attempts. This information is essential for accurately crafting the Hydra command and ensuring it detects incorrect credentials based on the known failure response.
+
+!! To be continued
